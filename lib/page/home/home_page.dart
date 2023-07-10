@@ -8,25 +8,23 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            Image.asset(
-              "assets/images/img_home_header@2x.png",
-              width: double.infinity,
-              fit: BoxFit.fitWidth,
-            ),
-            Column(
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).padding.top,
-                ),
-                const SizedBox(height: 30),
+      body: Stack(
+        children: [
+          Image.asset(
+            "assets/images/img_home_header@2x.png",
+            width: double.infinity,
+            fit: BoxFit.fitWidth,
+          ),
+          Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).padding.top,
+              ),
+              const SizedBox(height: 30),
 
-              ],
-            )
-          ],
-        ),
+            ],
+          )
+        ],
       ),
     );
   }
