@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_superapp_tanzania/page/discovery/app_bar.dart';
 import 'package:flutter_superapp_tanzania/page/widget/icon_button.dart';
 
 class DiscoveryPage extends StatelessWidget {
@@ -39,7 +38,7 @@ class DiscoveryPage extends StatelessWidget {
             const SizedBox(
               height: 27,
             ),
-            const Padding(
+             Padding(
               padding: EdgeInsets.only(left: 43.0, right: 43),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,7 +70,7 @@ class DiscoveryPage extends StatelessWidget {
             const SizedBox(
               height: 27,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 43.0, right: 43),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
