@@ -47,20 +47,21 @@ class ItemBottomSheet extends StatelessWidget {
               const Text(
                 "TRANSFER TO",
                 style: TextStyle(
-                    color: Color(0xFF727273),
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500),
+                  color: Color(0xFF727273),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
               Container(
                 height: 32,
                 width: 32,
                 decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: Color(0xFFF3F3F3)),
+                  shape: BoxShape.circle, color: Color(0xFFF3F3F3),
+                ),
                 child: InkWell(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Icon(Icons.close)),
+                  onTap: () => Navigator.pop(context),
+                  child: const Icon(Icons.close),
+                ),
               )
             ],
           ),
@@ -94,7 +95,7 @@ class ItemBottomSheet extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     color: Color(0xFF727273)),
               ),
-              Container()
+              Container(),
             ],
           ),
           const SizedBox(

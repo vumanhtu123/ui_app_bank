@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/page/discovery/discovery_page.dart';
+import 'package:flutter_superapp_tanzania/page/home/home_page.dart';
 import 'package:flutter_svg/svg.dart';
 
 void main() {
@@ -16,28 +17,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const MainPage(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
-
-  final List _screens = [
-    const DiscoveryPage(),
-    const DiscoveryPage(),
-    const DiscoveryPage(),
-    const DiscoveryPage(),
-    const DiscoveryPage()
-  ];
 
   void _updateIndex(int value) {
     setState(() {
@@ -48,7 +41,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_currentIndex],
+      backgroundColor: Colors.white,
+      body: IndexedStack(
+        children: [
+          const HomePage(),
+          const DiscoveryPage(),
+          Container(),
+          Container(),
+          Container()
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
