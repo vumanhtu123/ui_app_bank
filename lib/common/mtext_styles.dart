@@ -1,10 +1,9 @@
-import 'dart:ui';
-
+import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/common/mcolor.dart';
 
 class MTextStyle extends TextStyle {
 
-  MTextStyle._({
+   MTextStyle._({
     String? fontFamily,
     double? fontSize,
     double? height,
@@ -31,7 +30,15 @@ class MTextStyle extends TextStyle {
     fontFamily: _fontFamily,
     fontSize: 12,
     height: 1,
-    color: MColor.gray2,
+    color: MColor.gray1,
     fontWeight: FontWeight.w400,
   );
+
+   static var grayH1 = MTextStyle._(
+     fontFamily: _fontFamily,
+     fontSize: 24,
+     height: 1,
+     color: MColor.gray2,
+     fontWeight: FontWeight.w600,
+   );
 }

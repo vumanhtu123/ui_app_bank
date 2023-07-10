@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components/card_balance_component.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -21,7 +23,7 @@ class HomePage extends StatelessWidget {
                 height: MediaQuery.of(context).padding.top,
               ),
               const SizedBox(height: 30),
-
+              const CardBalanceComponent()
             ],
           )
         ],
