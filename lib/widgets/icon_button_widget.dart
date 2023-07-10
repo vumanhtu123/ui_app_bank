@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_superapp_tanzania/common/MColor.dart';
+import 'package:flutter_superapp_tanzania/common/mcolor.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class IconButtonWidget extends StatelessWidget {
@@ -11,7 +11,7 @@ class IconButtonWidget extends StatelessWidget {
     this.iconPadding,
     this.borderRadius,
     this.colorBg,
-    this.onPress,
+    this.onPress
   });
   final VoidCallback? onPress;
   final String assetImage;
@@ -34,7 +34,7 @@ class IconButtonWidget extends StatelessWidget {
         padding: EdgeInsets.all(iconPadding ?? 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius ?? 30),
-          color: colorBg ?? MColor.gray1
+          color: colorBg ?? MColor.gray1,
         ),
         child: SvgPicture.asset(assetImage),
       ),
