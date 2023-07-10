@@ -1,0 +1,17 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ic/trash">
+<g id="Group">
+<path id="Vector" d="M17.9999 6V18.75C17.9999 19.993 16.9729 21 15.7309 21H8.23094C7.93643 20.9997 7.64488 20.9412 7.37308 20.8278C7.10128 20.7144 6.85459 20.5484 6.64723 20.3393C6.43986 20.1301 6.27592 19.882 6.16483 19.6093C6.05374 19.3365 5.9977 19.0445 5.99994 18.75V6" stroke="#303032" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="Vector_2">
+<path d="M19.5 6H4.5H19.5Z" fill="#303032"/>
+<path d="M19.5 6H4.5" stroke="#303032" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Vector_3">
+<path d="M10 3H14H10Z" fill="#303032"/>
+<path d="M10 3H14" stroke="#303032" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path id="Vector_4" d="M14 10V17" stroke="#303032" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M10 17V10" stroke="#303032" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

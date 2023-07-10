@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_superapp_tanzania/tranfer/transfer.page.dart';
+import 'package:flutter_superapp_tanzania/page/discovery/discovery_page.dart';
+import 'package:flutter_superapp_tanzania/page/home/home_page.dart';
+import 'package:flutter_svg/svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,24 +10,102 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Transfer(),
+      home: const MainPage(),
+    );
+  }
+}
+
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  int _currentIndex = 0;
+
+  void _updateIndex(int value) {
+    setState(() {
+      _currentIndex = value;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: IndexedStack(
+        children: [
+          const HomePage(),
+          const DiscoveryPage(),
+          Container(),
+          Container(),
+          Container()
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _currentIndex,
+        onTap: _updateIndex,
+        selectedItemColor: const Color(0xFF1FB53A),
+        selectedIconTheme: const IconThemeData(color: Color(0xFF1FB53A)),
+        iconSize: 24,
+        items: [
+          BottomNavigationBarItem(
+            label: "Home",
+            icon: SvgPicture.asset(
+              "assets/images/icon_home.svg",
+              color: _currentIndex == 0
+                  ? const Color(0xFF1FB53A)
+                  : const Color(0xFF727273),
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: "Promotion",
+            icon: SvgPicture.asset(
+              "assets/images/icon_ticket.svg",
+              color: _currentIndex == 1
+                  ? const Color(0xFF1FB53A)
+                  : const Color(0xFF727273),
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: "Discovery",
+            icon: SvgPicture.asset(
+              "assets/images/icon_discovery.svg",
+              color: _currentIndex == 2
+                  ? const Color(0xFF1FB53A)
+                  : const Color(0xFF727273),
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: "History",
+            icon: SvgPicture.asset(
+              "assets/images/icon_doc.svg",
+              color: _currentIndex == 3
+                  ? const Color(0xFF1FB53A)
+                  : const Color(0xFF727273),
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: "Profile",
+            icon: SvgPicture.asset(
+              "assets/images/icon_profile.svg",
+              color: _currentIndex == 4
+                  ? const Color(0xFF1FB53A)
+                  : const Color(0xFF727273),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

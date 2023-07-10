@@ -1,0 +1,13 @@
+<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ic/ticket">
+<g id="Group">
+<g id="Vector">
+<path d="M11.496 10H11.511H11.496ZM11.5 16H11.515H11.5Z" fill="#727273"/>
+<path d="M11.496 10H11.511M11.5 16H11.515" stroke="#727273" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path id="Vector_2" d="M7.5 13H15.5" stroke="#727273" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M18 5C18.8284 5 19.5 5.67157 19.5 6.5C19.5 7.32843 18.8284 8 18 8C17.1716 8 16.5 7.32843 16.5 6.5C16.5 5.67157 17.1716 5 18 5Z" stroke="#727273" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M3.27401 11.144C2.27101 12.264 2.25001 13.954 3.17001 15.144C4.95709 17.4637 7.03628 19.5429 9.35601 21.33C10.546 22.25 12.236 22.229 13.356 21.226C16.3829 18.5171 19.2277 15.6115 21.872 12.528C22.1389 12.2213 22.3032 11.8388 22.342 11.434C22.506 9.63802 22.845 4.46402 21.44 3.06002C20.035 1.65502 14.862 1.99402 13.066 2.15902C12.6613 2.19793 12.2788 2.36224 11.972 2.62902C8.88857 5.27299 5.98293 8.1175 3.27401 11.144Z" stroke="#727273" stroke-width="1.5"/>
+</g>
+</g>
+</svg>
