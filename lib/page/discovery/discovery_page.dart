@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/page/discovery/app_bar.dart';
+import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_confirm.dart';
 import 'package:flutter_superapp_tanzania/page/widget/icon_button.dart';
 import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_dialog.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,6 +19,7 @@ class DiscoveryPage extends StatelessWidget {
       DataIcon("More", "assets/images/icon_arrow.svg"),
     ];
     BottomSheetDialog bottomSheetDialog = BottomSheetDialog(context);
+    BottomSheetConfirm bottomSheetConfirm =BottomSheetConfirm(context);
     // void _modalBottomSheetMenu() {
     //   showModalBottomSheet(
     //     context: context,
@@ -78,7 +80,8 @@ class DiscoveryPage extends StatelessWidget {
                   padding: 14,
                   title: "App 1",
                 ),
-                const IconButtonWidget(
+                 IconButtonWidget(
+                  function: () => bottomSheetConfirm.modalBottomSheetMenu(),
                   image: 'assets/images/icon_bookmac.svg',
                   height: 60,
                   width: 60,

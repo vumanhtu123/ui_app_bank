@@ -22,7 +22,7 @@ class BottomSheetDialog {
               topRight: Radius.circular(16.0),
             ),
           ),
-          child: const SingleChildScrollView(child: ItemBottomSheet()),
+          child: const ItemBottomSheet(),
         );
       },
     );
@@ -64,74 +64,83 @@ class ItemBottomSheet extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          const ItemRow(
-            name: 'Phone Number',
-            desc: 'Within the HaloPesa',
-            image: 'assets/images/icon_phone.svg',
-            isDivider: true,
-          ),
-          const ItemRow(
-            name: 'Other Networks',
-            desc: 'Within the HaloPesa',
-            image: 'assets/images/icon_wallet.svg',
-            isDivider: true,
-          ),
-          const ItemRow(
-            name: 'Bank',
-            desc: 'Within the HaloPesa',
-            image: 'assets/images/icon_bank.svg',
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                "SAVED LIST & TRANSACTIONS",
-                style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF727273)),
+          Expanded(
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const ItemRow(
+                    name: 'Phone Number',
+                    desc: 'Within the HaloPesa',
+                    image: 'assets/images/icon_phone.svg',
+                    isDivider: true,
+                  ),
+                  const ItemRow(
+                    name: 'Other Networks',
+                    desc: 'Within the HaloPesa',
+                    image: 'assets/images/icon_wallet.svg',
+                    isDivider: true,
+                  ),
+                  const ItemRow(
+                    name: 'Bank',
+                    desc: 'Within the HaloPesa',
+                    image: 'assets/images/icon_bank.svg',
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "SAVED LIST & TRANSACTIONS",
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFF727273)),
+                      ),
+                      Container()
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const ItemSelect(),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  const ItemSearch(),
+                  const ItemRow2(
+                    name: 'Brooklyn Simmons',
+                    desc: 'NMB Bank',
+                    phone: '01234 45678 9012 3456',
+                    image: 'assets/images/icon_bank.svg',
+                    isDivider: true,
+                  ),
+                  const ItemRow2(
+                    name: 'Jane Cooper',
+                    desc: 'HaloPesa',
+                    phone: '(+255) 555-0134',
+                    image: 'assets/images/icon_bank.svg',
+                    isDivider: true,
+                  ),
+                  const ItemRow2(
+                    name: 'Jerome Bell',
+                    desc: 'HaloPesa',
+                    phone: '(+255) 555-0134',
+                    image: 'assets/images/icon_bank.svg',
+                    isDivider: true,
+                  ),
+                  const ItemRow2(
+                    name: 'Dianne Russell',
+                    desc: 'Airtel Money',
+                    phone: '(+255) 555-0134',
+                    image: 'assets/images/icon_bank.svg',
+                    isDivider: true,
+                  ),
+                ],
               ),
-              Container()
-            ],
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          const ItemSelect(),
-          const SizedBox(
-            height: 12,
-          ),
-          const ItemSearch(),
-          const ItemRow2(
-            name: 'Brooklyn Simmons',
-            desc: 'NMB Bank',
-            phone: '01234 45678 9012 3456',
-            image: 'assets/images/icon_bank.svg',
-            isDivider: true,
-          ),
-          const ItemRow2(
-            name: 'Jane Cooper',
-            desc: 'HaloPesa',
-            phone: '(+255) 555-0134',
-            image: 'assets/images/icon_bank.svg',
-            isDivider: true,
-          ),
-          const ItemRow2(
-            name: 'Jerome Bell',
-            desc: 'HaloPesa',
-            phone: '(+255) 555-0134',
-            image: 'assets/images/icon_bank.svg',
-            isDivider: true,
-          ),
-          const ItemRow2(
-            name: 'Dianne Russell',
-            desc: 'Airtel Money',
-            phone: '(+255) 555-0134',
-            image: 'assets/images/icon_bank.svg',
-            isDivider: true,
+            ),
           ),
         ],
       ),
@@ -162,7 +171,8 @@ class ItemSearch extends StatelessWidget {
           ),
           const Expanded(
             child: TextField(
-              autofocus: true,
+
+              autofocus: false,
               style: TextStyle(color: Colors.black, fontSize: 14),
               decoration: InputDecoration.collapsed(
                 hintText: "Search name, phone, account number...",
@@ -316,91 +326,93 @@ class ItemRow2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 16.0),
-              child: IconButtonWidget(
-                image: image,
-                height: 60,
-                width: 60,
-                padding: 16,
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: IconButtonWidget(
+                  image: image,
+                  height: 60,
+                  width: 60,
+                  padding: 16,
+                ),
               ),
-            ),
-            const SizedBox(
-              width: 16,
-            ),
-            Container(
-              width: 239,
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    name ?? "Phone Number",
-                    style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xFF141416)),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    desc ?? "Within the HaloPesa",
-                    style: const TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFF727273)),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    phone ?? "01234 45678 9012 3456",
-                    style: const TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFF727273)),
-                  ),
-                  // const SizedBox(
-                  //   height: 30,
-                  // ),
-                  // isDivider != null
-                  //     ? Container(
-                  //   height: 1,
-                  //   width: 280,
-                  //   color: const Color(0xFFF3F3F3),
-                  // )
-                  //     : Container(),
-                ],
+              const SizedBox(
+                width: 16,
               ),
-            ),
-            const SizedBox(
-              width: 16,
-            ),
-            SvgPicture.asset("assets/images/icon_trash.svg")
-            // SvgPicture.asset('assets/images/icon_trash.svg')
-          ],
-        ),
-        Column(
-          children: [
-            // SvgPicture.asset("assets/images/icon_trash.svg"),
-            isDivider != null
-                ? Padding(
-                    padding: const EdgeInsets.only(left: 76.0),
-                    child: Container(
-                      height: 1,
-                      width: 280,
-                      color: const Color(0xFFF3F3F3),
+              Container(
+                width: 239,
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      name ?? "Phone Number",
+                      style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFF141416)),
                     ),
-                  )
-                : Container(),
-          ],
-        )
-      ],
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      desc ?? "Within the HaloPesa",
+                      style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF727273)),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      phone ?? "01234 45678 9012 3456",
+                      style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF727273)),
+                    ),
+                    // const SizedBox(
+                    //   height: 30,
+                    // ),
+                    // isDivider != null
+                    //     ? Container(
+                    //   height: 1,
+                    //   width: 280,
+                    //   color: const Color(0xFFF3F3F3),
+                    // )
+                    //     : Container(),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                width: 16,
+              ),
+              SvgPicture.asset("assets/images/icon_trash.svg")
+              // SvgPicture.asset('assets/images/icon_trash.svg')
+            ],
+          ),
+          Column(
+            children: [
+              // SvgPicture.asset("assets/images/icon_trash.svg"),
+              isDivider != null
+                  ? Padding(
+                      padding: const EdgeInsets.only(left: 76.0),
+                      child: Container(
+                        height: 1,
+                        width: 280,
+                        color: const Color(0xFFF3F3F3),
+                      ),
+                    )
+                  : Container(),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
