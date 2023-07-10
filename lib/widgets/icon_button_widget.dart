@@ -34,7 +34,7 @@ class IconButtonWidget extends StatelessWidget {
         padding: EdgeInsets.all(iconPadding ?? 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius ?? 30),
-          color: colorBg ?? mcolor.gray1,
+          color: colorBg ?? MColor.gray1,
         ),
         child: SvgPicture.asset(assetImage),
       ),
