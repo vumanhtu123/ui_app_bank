@@ -8,9 +8,15 @@ class Assets {
   static const String assetsLogo1 = 'assets/logo1.png';
   static const String iconsIcGame = 'assets/icons/ic_game.svg';
   static const String iconsIcProfile = 'assets/icons/ic_profile.svg';
+  static const String iconsIconSuccess = 'assets/icons/icon_success.svg';
+  static const String iconsScreenshot = 'assets/icons/screenshot.svg';
+  static const String iconsShare = 'assets/icons/share.svg';
+  static const String iconsDown = 'assets/icons/down.svg';
+  static const String iconsChervon = 'assets/icons/chervon.svg';
   static const String imagesAvatar = 'assets/images/avatar.svg';
   static const String imagesAvtp = 'assets/images/avtp.svg';
-  static const String imagesBackGroundAppbar = 'assets/images/back_ground_appbar.svg';
+  static const String imagesBackGroundAppbar =
+      'assets/images/back_ground_appbar.svg';
   static const String imagesBrandBank = 'assets/images/brand_bank.svg';
   static const String imagesGroup = 'assets/images/group.svg';
   static const String imagesIconArrow = 'assets/images/icon_arrow.svg';
@@ -33,7 +39,8 @@ class Assets {
   static const String imagesIconWallet = 'assets/images/icon_wallet.svg';
   static const String imagesImage = 'assets/images/image.svg';
   static const String imagesImgHeader2x = 'assets/images/img_header@2x.png';
-  static const String imagesImgHomeHeader2x = 'assets/images/img_home_header@2x.png';
+  static const String imagesImgHomeHeader2x =
+      'assets/images/img_home_header@2x.png';
   static const String imagesNotification = 'assets/images/notification.svg';
-
+  static const String imagesLogoSuccess = 'assets/images/logosuccess.png';
 }

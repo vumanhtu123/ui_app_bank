@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/page/discovery/discovery_page.dart';
 import 'package:flutter_superapp_tanzania/page/home/home_page.dart';
-import 'package:flutter_superapp_tanzania/tranfer/transfer.page.dart';
+import 'package:flutter_superapp_tanzania/page/tranfer/transfer.page.dart';
 import 'package:flutter_svg/svg.dart';
 
 void main() {

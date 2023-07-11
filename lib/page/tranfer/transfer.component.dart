@@ -259,7 +259,6 @@ class _BodyTransferState extends State<BodyTransfer> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 12),
                   Container(
                     width: 39,
                     height: 26,
