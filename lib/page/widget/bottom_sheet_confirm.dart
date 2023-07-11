@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_pin.dart';
 import 'package:flutter_svg/svg.dart';
 
 class BottomSheetConfirm {
@@ -42,6 +43,7 @@ class ItemBottomSheetConfirm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BottomSheetPin bottomSheetPin = BottomSheetPin(context);
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -88,7 +90,14 @@ class ItemBottomSheetConfirm extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          const ButtonWidget(textButton: "Confirm")
+          ButtonWidget(
+            textButton: "Confirm",
+            openNextBottom: () {
+              // Navigator.of(context).pop();
+              bottomSheetPin.modalBottomSheetPin();
+              // print("object");
+            } ,
+          )
         ]));
   }
 }
@@ -174,7 +183,7 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => openNextBottom,
+      onTap: openNextBottom,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),

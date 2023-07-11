@@ -9,7 +9,6 @@ class AppBarDiscovery extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Container(
-
           height: 154.5, // Background
           child: SvgPicture.asset(
             fit: BoxFit.cover,

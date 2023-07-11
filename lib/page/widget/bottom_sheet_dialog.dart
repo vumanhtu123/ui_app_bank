@@ -171,7 +171,6 @@ class ItemSearch extends StatelessWidget {
           ),
           const Expanded(
             child: TextField(
-
               autofocus: false,
               style: TextStyle(color: Colors.black, fontSize: 14),
               decoration: InputDecoration.collapsed(
@@ -191,8 +190,15 @@ class ItemSearch extends StatelessWidget {
   }
 }
 
-class ItemSelect extends StatelessWidget {
+class ItemSelect extends StatefulWidget {
   const ItemSelect({super.key});
+
+  @override
+  State<ItemSelect> createState() => _ItemSelectState();
+}
+
+class _ItemSelectState extends State<ItemSelect> {
+  bool? isSelect = true;
 
   @override
   Widget build(BuildContext context) {
@@ -207,38 +213,56 @@ class ItemSelect extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 3.0),
-            child: Container(
-              width: 181.5,
-              height: 38,
-              decoration: BoxDecoration(
-                  color: const Color(0xFFFFFFFF),
-                  borderRadius: BorderRadius.circular(6)),
-              child: const Center(
-                child: Text(
-                  "Recipients List",
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF141416)),
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  isSelect = true;
+                });
+              },
+              child: Container(
+                width: 170,
+                height: 38,
+                decoration: BoxDecoration(
+                    color: isSelect ?? true
+                        ? const Color(0xFFFFFFFF)
+                        : const Color(0xFFF3F3F3),
+                    borderRadius: BorderRadius.circular(6)),
+                child: const Center(
+                  child: Text(
+                    "Recipients List",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF141416)),
+                  ),
                 ),
               ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 3.0),
-            child: Container(
-              width: 170,
-              height: 38,
-              decoration: BoxDecoration(
-                  color: const Color(0xFFF3F3F3),
-                  borderRadius: BorderRadius.circular(6)),
-              child: const Center(
-                child: Text(
-                  "Transactions Recent",
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF727273)),
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  isSelect = false;
+                });
+              },
+              child: Container(
+                width: 170,
+                height: 38,
+                decoration: BoxDecoration(
+                    color: !isSelect!
+                        ? const Color(0xFFFFFFFF)
+                        : const Color(0xFFF3F3F3),
+                    borderRadius: BorderRadius.circular(6)),
+                child: const Center(
+                  child: Text(
+                    "Transactions Recent",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF727273)),
+                  ),
                 ),
               ),
             ),
@@ -332,7 +356,9 @@ class ItemRow2 extends StatelessWidget {
           Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 16.0),
+                padding: const EdgeInsets.only(
+                  top: 30.0,
+                ),
                 child: IconButtonWidget(
                   image: image,
                   height: 60,
