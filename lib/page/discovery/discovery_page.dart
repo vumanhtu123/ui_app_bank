@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/page/discovery/app_bar.dart';
 import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_confirm.dart';
-import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_dialog.dart';
 import 'package:flutter_superapp_tanzania/page/widget/icon_button.dart';
+import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_dialog.dart';
+class DataIcon {
+  final String? title;
+  final String? icon;
+  DataIcon(this.title, this.icon);
+}
 
 class DiscoveryPage extends StatelessWidget {
   const DiscoveryPage({super.key});
@@ -64,6 +69,33 @@ class DiscoveryPage extends StatelessWidget {
           const SizedBox(
             height: 27,
           ),
+
+          // SizedBox(
+          //   height: 343,
+          //   child: GridView.builder(
+          //       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          //         crossAxisCount: 3,
+          //       ),
+          //       physics: const NeverScrollableScrollPhysics(),
+          //       itemCount: listData.length,
+          //       itemBuilder: (BuildContext context, int index) {
+          //         final item = listData[index];
+          //         return Padding(
+          //           padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          //           child: IconButtonWidget(
+          //             function: index == 0
+          //                 ? () => bottomSheetDialog.modalBottomSheetMenu()
+          //                 : () => bottomSheetConfirm.modalBottomSheetMenu(),
+          //             image: item.icon,
+          //             title: item.title,
+          //             height: 60,
+          //             width: 60,
+          //             padding: 14,
+          //           ),
+          //         );
+          //       }),
+          // ),
+
            Padding(
             padding: const EdgeInsets.only(left: 43.0, right: 43),
             child: Row(
@@ -100,11 +132,11 @@ class DiscoveryPage extends StatelessWidget {
           const SizedBox(
             height: 27,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 43.0, right: 43),
+          const Padding(
+            padding: EdgeInsets.only(left: 43.0, right: 43),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 IconButtonWidget(
                   image: 'assets/images/icon_cart.svg',
                   height: 60,
@@ -168,7 +200,7 @@ class DiscoveryPage extends StatelessWidget {
               height: 100,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                physics: const ScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: listData.length,
                 itemBuilder: (context, index) {
@@ -194,9 +226,4 @@ class DiscoveryPage extends StatelessWidget {
   }
 }
 
-class DataIcon {
-  final String? title;
-  final String? icon;
 
-  DataIcon(this.title, this.icon);
-}
