@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class BottomSheetConfirm {
+  final Function() onTap;
   final BuildContext context;
 
-  BottomSheetConfirm(this.context);
+  BottomSheetConfirm(this.context, this.onTap);
 
   void modalBottomSheetMenu() {
     showModalBottomSheet(
@@ -21,7 +22,7 @@ class BottomSheetConfirm {
               topRight: Radius.circular(16.0),
             ),
           ),
-          child: ItemBottomSheetConfirm(),
+          child: ItemBottomSheetConfirm(onTap: onTap),
         );
       },
     );
@@ -29,7 +30,9 @@ class BottomSheetConfirm {
 }
 
 class ItemBottomSheetConfirm extends StatelessWidget {
-  ItemBottomSheetConfirm({super.key});
+  final Function() onTap;
+
+  ItemBottomSheetConfirm({super.key, required this.onTap});
 
   final List<ItemTextData> listData = [
     ItemTextData("Recipient Name", 'Jane Cooper', false, false),
@@ -85,10 +88,10 @@ class ItemBottomSheetConfirm extends StatelessWidget {
               );
             },
           ),
-          const SizedBox(
-            height: 16,
+          ButtonWidget(
+            textButton: "Confirm",
+            openNextBottom: onTap,
           ),
-          const ButtonWidget(textButton: "Confirm")
         ]));
   }
 }
@@ -174,7 +177,7 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => openNextBottom,
+      onTap: () => openNextBottom!(),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
