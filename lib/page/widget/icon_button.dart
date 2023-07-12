@@ -29,7 +29,7 @@ class IconButtonWidget extends StatelessWidget {
           InkWell(
             onTap: function,
             child: Container(
-              width: width?? 32,
+              width: width ?? 32,
               height: height ?? 32,
               decoration:  BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(radius ?? 30)),
@@ -37,17 +37,20 @@ class IconButtonWidget extends StatelessWidget {
                 shape: BoxShape.rectangle,
               ),
               child: Padding(
-                  padding: EdgeInsets.all(padding ?? 14),
-                  child: SvgPicture.asset(image!)
+                padding: EdgeInsets.all(padding ?? 14),
+                child: SvgPicture.asset(image!)
               ),
             ),
           ),
           const SizedBox(height: 12,),
-          Text(title ?? "", style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w400,
-            color: Color(0xFF141416)
-          ),)
+          Text(
+            title ?? "",
+            style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFF141416)
+            ),
+          )
         ],
       );
 

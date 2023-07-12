@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/common/mcolor.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class IconButtonWidget extends StatelessWidget {
-  const IconButtonWidget({
-    super.key,
-    required this.assetImage,
-    this.width,
-    this.height,
-    this.iconPadding,
-    this.borderRadius,
-    this.colorBg,
-    this.onPress
-  });
+class NormalButtonWidget extends StatelessWidget {
+  const NormalButtonWidget(
+      {super.key,
+      required this.tittle,
+      this.width,
+      this.color,
+      this.fonWeight,
+      this.fontSize,
+      this.height,
+      this.iconPadding,
+      this.borderRadius,
+      this.colorBg,
+      this.onPress});
+
   final VoidCallback? onPress;
-  final String assetImage;
+  final String tittle;
   final double? iconPadding;
   final double? width;
+  final double? fontSize;
+  final Color? color;
+  final FontWeight? fonWeight;
   final double? height;
   final double? borderRadius;
   final MColor? colorBg;
@@ -36,7 +41,13 @@ class IconButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius ?? 30),
           color: colorBg ?? MColor.gray1,
         ),
-        child: SvgPicture.asset(assetImage),
+        child: Center(
+          child: Text(
+            tittle,
+            style: TextStyle(
+                fontSize: fontSize, fontWeight: fonWeight, color: color),
+          ),
+        ),
       ),
     );
   }
