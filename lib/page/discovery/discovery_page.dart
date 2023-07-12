@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/page/discovery/app_bar.dart';
 import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_confirm.dart';
-import 'package:flutter_superapp_tanzania/page/widget/icon_button.dart';
 import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_dialog.dart';
+import 'package:flutter_superapp_tanzania/page/widget/icon_button.dart';
 
 class DiscoveryPage extends StatelessWidget {
   const DiscoveryPage({super.key});
@@ -18,7 +18,7 @@ class DiscoveryPage extends StatelessWidget {
       DataIcon("More", "assets/images/icon_arrow.svg"),
     ];
     BottomSheetDialog bottomSheetDialog = BottomSheetDialog(context);
-    BottomSheetConfirm bottomSheetConfirm =BottomSheetConfirm(context);
+    BottomSheetConfirm bottomSheetConfirm = BottomSheetConfirm(context, () {});
     // void _modalBottomSheetMenu() {
     //   showModalBottomSheet(
     //     context: context,
@@ -101,10 +101,10 @@ class DiscoveryPage extends StatelessWidget {
             height: 27,
           ),
           Padding(
-            padding: EdgeInsets.only(left: 43.0, right: 43),
-            child: const Row(
+            padding: const EdgeInsets.only(left: 43.0, right: 43),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 IconButtonWidget(
                   image: 'assets/images/icon_cart.svg',
                   height: 60,
