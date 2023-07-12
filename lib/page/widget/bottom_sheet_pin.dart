@@ -4,13 +4,14 @@ import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_otp_code.dart
 class BottomSheetPin {
 
   void modalBottomSheetPin(BuildContext context, height) {
+    final double dialogHeight = MediaQuery.of(context).size.height * 0.70;
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (BuildContext builder) {
         return Container(
-          height: height,
+          height: dialogHeight,
           decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
@@ -18,7 +19,7 @@ class BottomSheetPin {
               topRight: Radius.circular(16.0),
             ),
           ),
-          child:  ItemBottomSheetPin(height: height),
+          child: ItemBottomSheetPin(height: dialogHeight),
         );
       },
     );

@@ -5,6 +5,7 @@ import 'package:lottie/lottie.dart';
 Future<void> loadingDialog(BuildContext context) {
   return showDialog(
       barrierColor: MColor.gray5,
+      barrierDismissible: false,
       context: context,
       builder: (BuildContext context) {
         final double dialogWidth = MediaQuery.of(context).size.width * 0.45;
@@ -17,10 +18,10 @@ Future<void> loadingDialog(BuildContext context) {
                 borderRadius: BorderRadius.all(Radius.circular(6))),
             child: Column(
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Lottie.asset('assets/loadingcircle.json',
                     width: 40, height: 40),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Text(
                   'Verifying...',
                   style: TextStyle(

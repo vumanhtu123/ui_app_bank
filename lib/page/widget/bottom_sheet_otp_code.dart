@@ -1,9 +1,12 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_superapp_tanzania/common/loading.circle.dialog.dart';
+import 'package:flutter_superapp_tanzania/page/tranferSuccess/tranfer.success.page.dart';
 import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_pin.dart';
 
 class BottomSheetOptCode {
-  void modalBottomSheetPin(BuildContext context ,  height ) {
+  void modalBottomSheetPin(BuildContext context, height) {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
@@ -129,7 +132,17 @@ class _ItemBottomSheetOtpCodeState extends State<ItemBottomSheetOtpCode> {
               OtpInput(
                 // controller: _fieldFour,
                 autoFocus: false,
-                onChangeData: () {},
+                onChangeData: () {
+                  loadingDialog(context);
+                  Future.delayed(const Duration(seconds: 4), () {
+                    // Code to be executed after the delay
+                    closeLoading(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const TransferSuccess()));
+                  });
+                },
               )
             ],
           ),

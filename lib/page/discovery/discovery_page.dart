@@ -132,11 +132,11 @@ class DiscoveryPage extends StatelessWidget {
           const SizedBox(
             height: 27,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 43.0, right: 43),
+           Padding(
+            padding: const EdgeInsets.only(left: 43.0, right: 43),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 IconButtonWidget(
                   image: 'assets/images/icon_cart.svg',
                   height: 60,
