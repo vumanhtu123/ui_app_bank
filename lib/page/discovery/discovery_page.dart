@@ -18,7 +18,7 @@ class DiscoveryPage extends StatelessWidget {
       DataIcon("More", "assets/images/icon_arrow.svg"),
     ];
     BottomSheetDialog bottomSheetDialog = BottomSheetDialog(context);
-    BottomSheetConfirm bottomSheetConfirm = BottomSheetConfirm(context);
+    BottomSheetConfirm bottomSheetConfirm = BottomSheetConfirm(context, () {});
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -73,7 +73,8 @@ class DiscoveryPage extends StatelessWidget {
                           title: "App 1",
                         ),
                         IconButtonWidget(
-                          function: () => bottomSheetConfirm.modalBottomSheetMenu(),
+                          function: () =>
+                              bottomSheetConfirm.modalBottomSheetMenu(),
                           image: 'assets/images/icon_bookmac.svg',
                           height: 60,
                           width: 60,
@@ -94,7 +95,7 @@ class DiscoveryPage extends StatelessWidget {
                     height: 27,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 43.0, right: 43),
+                    padding: const EdgeInsets.only(left: 43.0, right: 43),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [

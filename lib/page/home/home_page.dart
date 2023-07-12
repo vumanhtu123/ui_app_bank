@@ -98,12 +98,16 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: MediaQuery.of(context).padding.top,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
                 const AccountTopBar(),
+                const SizedBox(height: 30),
                 const Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16,
+                  ),
                   child: CardBalanceComponent(),
                 ),
+                const SizedBox(height: 15),
                 GridComponent(homeGridList: homeGridList),
                 SubscriberComponent(subscriberList: subscriberList),
                 PromotionsComponent(promotionList: promotionList)

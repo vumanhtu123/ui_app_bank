@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/common/mcolor.dart';
 import 'package:flutter_superapp_tanzania/common/mtext_styles.dart';
 import 'package:flutter_superapp_tanzania/page/home/home_page.dart';
-import 'package:flutter_superapp_tanzania/page/widget/icon_button.dart';
 import 'package:flutter_superapp_tanzania/page/widget/normal.button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SubscriberComponent extends StatelessWidget {
-  SubscriberComponent({super.key, required this.subscriberList});
+  const SubscriberComponent({super.key, required this.subscriberList});
 
-  List<SubscriberModel> subscriberList;
+  final List<SubscriberModel> subscriberList;
 
   @override
   Widget build(BuildContext context) {
@@ -59,9 +58,9 @@ class SubscriberComponent extends StatelessWidget {
 }
 
 class SubscriberItem extends StatelessWidget {
-  SubscriberItem({super.key, required this.subscriber});
+  const SubscriberItem({super.key, required this.subscriber});
 
-  SubscriberModel subscriber;
+  final SubscriberModel subscriber;
 
   @override
   Widget build(BuildContext context) {
@@ -83,13 +82,13 @@ class SubscriberItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SvgPicture.asset(
-            subscriber.svgAsset ?? '',
+            subscriber.svgAsset,
             width: 24,
             height: 24,
           ),
           const SizedBox(height: 10),
           Text(
-            subscriber.title ?? '',
+            subscriber.title,
             style: MTextStyle.gray600Normal,
           ),
           const SizedBox(height: 10),
@@ -97,7 +96,7 @@ class SubscriberItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                subscriber.value ?? '',
+                subscriber.value,
                 style: MTextStyle.grayH1,
               ),
               if(subscriber.value2 != null)...[
@@ -108,7 +107,7 @@ class SubscriberItem extends StatelessWidget {
               ],
               const SizedBox(width: 5),
               Text(
-                subscriber.unit ?? '',
+                subscriber.unit,
                 style: MTextStyle.grayNormal,
               ),
             ],
@@ -130,9 +129,9 @@ class SubscriberItem extends StatelessWidget {
 }
 
 class SubscriberItem3 extends StatelessWidget {
-  SubscriberItem3({super.key, required this.subscriber});
+  const SubscriberItem3({super.key, required this.subscriber});
 
-  SubscriberModel subscriber;
+  final SubscriberModel subscriber;
 
   @override
   Widget build(BuildContext context) {
@@ -143,13 +142,13 @@ class SubscriberItem3 extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SvgPicture.asset(
-            subscriber.svgAsset ?? '',
+            subscriber.svgAsset,
             width: 24,
             height: 24,
           ),
           const SizedBox(height: 10),
           Text(
-            subscriber.title ?? '',
+            subscriber.title,
             style: MTextStyle.gray600Normal,
           ),
           const Spacer(),
@@ -157,7 +156,7 @@ class SubscriberItem3 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                subscriber.value ?? '',
+                subscriber.value,
                 style: MTextStyle.grayH1,
               ),
               if(subscriber.value2 != null)...[
@@ -168,7 +167,7 @@ class SubscriberItem3 extends StatelessWidget {
               ],
               const SizedBox(width: 5),
               Text(
-                subscriber.unit ?? '',
+                subscriber.unit,
                 style: MTextStyle.grayNormal,
               ),
             ],

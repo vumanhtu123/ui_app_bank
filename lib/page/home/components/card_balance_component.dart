@@ -45,6 +45,7 @@ class CardBalanceComponent extends StatelessWidget {
                 '895.500,000',
                 style: MTextStyle.grayH1,
               ),
+              const SizedBox(width: 5),
               Text(
                 'TZS',
                 style: TextStyle(
