@@ -13,8 +13,9 @@ class BottomSheetConfirm {
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (BuildContext builder) {
+        double height = MediaQuery.of(context).size.height - 273;
         return Container(
-          height: MediaQuery.of(context).size.height - 273,
+          height: height,
           decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
@@ -22,7 +23,7 @@ class BottomSheetConfirm {
               topRight: Radius.circular(16.0),
             ),
           ),
-          child: ItemBottomSheetConfirm(),
+          child: ItemBottomSheetConfirm(height),
         );
       },
     );
@@ -30,8 +31,8 @@ class BottomSheetConfirm {
 }
 
 class ItemBottomSheetConfirm extends StatelessWidget {
-  ItemBottomSheetConfirm({super.key});
-
+  ItemBottomSheetConfirm(this.height, {super.key});
+  final double? height;
   final List<ItemTextData> listData = [
     ItemTextData("Recipient Name", 'Jane Cooper', false, false),
     ItemTextData("Recipient Phone", '(+255) 555-0134', false, false),
@@ -43,7 +44,7 @@ class ItemBottomSheetConfirm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BottomSheetPin bottomSheetPin = BottomSheetPin(context);
+    BottomSheetPin bottomSheetPin = BottomSheetPin();
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -93,8 +94,8 @@ class ItemBottomSheetConfirm extends StatelessWidget {
           ButtonWidget(
             textButton: "Confirm",
             openNextBottom: () {
-              // Navigator.of(context).pop();
-              bottomSheetPin.modalBottomSheetPin();
+              Navigator.of(context).pop();
+              bottomSheetPin.modalBottomSheetPin(context , height);
               // print("object");
             } ,
           )

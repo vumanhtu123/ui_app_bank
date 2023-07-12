@@ -3,18 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_pin.dart';
 
 class BottomSheetOptCode {
-  final BuildContext context;
-
-  BottomSheetOptCode(this.context);
-
-  void modalBottomSheetPin() {
+  void modalBottomSheetPin(BuildContext context ,  height ) {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (BuildContext builder) {
         return Container(
-          height: MediaQuery.of(context).size.height - 273,
+          height: height,
           decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(

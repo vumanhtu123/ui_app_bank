@@ -2,18 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_otp_code.dart';
 
 class BottomSheetPin {
-  final BuildContext context;
 
-  BottomSheetPin(this.context);
-
-  void modalBottomSheetPin() {
+  void modalBottomSheetPin(BuildContext context, height) {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (BuildContext builder) {
         return Container(
-          height: MediaQuery.of(context).size.height - 273,
+          height: height,
           decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
@@ -21,7 +18,7 @@ class BottomSheetPin {
               topRight: Radius.circular(16.0),
             ),
           ),
-          child: const ItemBottomSheetPin(),
+          child:  ItemBottomSheetPin(height: height),
         );
       },
     );
@@ -29,7 +26,8 @@ class BottomSheetPin {
 }
 
 class ItemBottomSheetPin extends StatefulWidget {
-  const ItemBottomSheetPin({super.key});
+  const ItemBottomSheetPin({super.key, this.height});
+  final double? height;
 
   @override
   State<ItemBottomSheetPin> createState() => _ItemBottomSheetPinState();
@@ -45,14 +43,14 @@ class _ItemBottomSheetPinState extends State<ItemBottomSheetPin> {
 
   @override
   Widget build(BuildContext context) {
-    BottomSheetOptCode bottomSheetOptCode =BottomSheetOptCode(context);
+    BottomSheetOptCode bottomSheetOptCode =BottomSheetOptCode();
     void checkPinEntered() {
       if (_fieldOne.text.isNotEmpty &&
           _fieldTwo.text.isNotEmpty &&
           _fieldThree.text.isNotEmpty &&
           _fieldFour.text.isNotEmpty) {
-
-        bottomSheetOptCode.modalBottomSheetPin();
+        Navigator.of(context).pop();
+        bottomSheetOptCode.modalBottomSheetPin(context, widget.height);
       }
     }
     return Padding(
@@ -123,10 +121,20 @@ class OtpInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final nextFocus = FocusScope.of(context).nextFocus();
+    bool isNextFocus;
     return Container(
       decoration: BoxDecoration(
           color: const Color(0xFFF3F3F3),
-          borderRadius: BorderRadius.circular(4)),
+          borderRadius: BorderRadius.circular(4),
+    //       boxShadow: [
+    //   BoxShadow(
+    //   color: const Color(0xFF1FB53A).withOpacity(0.5),
+    //     spreadRadius: 1,
+    //     blurRadius: 1,
+    //     offset: Offset.zero)
+    // ]
+      ),
       height: 56,
       width: 56,
       child: TextField(
@@ -148,7 +156,7 @@ class OtpInput extends StatelessWidget {
         onChanged: (value) {
           onChangeData!();
           if (value.length == 1) {
-            FocusScope.of(context).nextFocus();
+            isNextFocus  =  FocusScope.of(context).nextFocus();
           }
         },
 

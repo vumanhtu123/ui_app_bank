@@ -172,7 +172,7 @@ class ItemSearch extends StatelessWidget {
           ),
           const Expanded(
             child: TextField(
-              autofocus: true,
+              // autofocus: true,
               style: TextStyle(color: Colors.black, fontSize: 14),
               decoration: InputDecoration.collapsed(
                 hintText: "Search name, phone, account number...",

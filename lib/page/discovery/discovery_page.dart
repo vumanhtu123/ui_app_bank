@@ -44,101 +44,101 @@ class DiscoveryPage extends StatelessWidget {
                   color: Color(0xFF141416)),
             ),
           ),
-          // const SizedBox(
-          //   height: 27,
-          // ),
-
-          SizedBox(
-            height: 243,
-            child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                ),
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: listData.length,
-                itemBuilder: (BuildContext context, int index) {
-                  final item = listData[index];
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: IconButtonWidget(
-                      function: index == 0
-                          ? () => bottomSheetDialog.modalBottomSheetMenu()
-                          : () => bottomSheetConfirm.modalBottomSheetMenu(),
-                      image: item.icon,
-                      title: item.title,
-                      height: 60,
-                      width: 60,
-                      padding: 14,
-                    ),
-                  );
-                }),
+          const SizedBox(
+            height: 27,
           ),
 
-          //  Padding(
-          //   padding: const EdgeInsets.only(left: 43.0, right: 43),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       IconButtonWidget(
-          //         function: (){
-          //           bottomSheetDialog.modalBottomSheetMenu();
-          //         },
-          //         image: 'assets/images/icon_game.svg',
-          //         height: 60,
-          //         width: 60,
-          //         padding: 14,
-          //         title: "App 1",
+          // SizedBox(
+          //   height: 343,
+          //   child: GridView.builder(
+          //       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          //         crossAxisCount: 3,
           //       ),
-          //        IconButtonWidget(
-          //         function: () => bottomSheetConfirm.modalBottomSheetMenu(),
-          //         image: 'assets/images/icon_bookmac.svg',
-          //         height: 60,
-          //         width: 60,
-          //         padding: 14,
-          //         title: "App 2",
-          //       ),
-          //       const IconButtonWidget(
-          //         image: 'assets/images/icon_calendar.svg',
-          //         height: 60,
-          //         width: 60,
-          //         padding: 14,
-          //         title: "App 3",
-          //       ),
-          //     ],
-          //   ),
+          //       physics: const NeverScrollableScrollPhysics(),
+          //       itemCount: listData.length,
+          //       itemBuilder: (BuildContext context, int index) {
+          //         final item = listData[index];
+          //         return Padding(
+          //           padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          //           child: IconButtonWidget(
+          //             function: index == 0
+          //                 ? () => bottomSheetDialog.modalBottomSheetMenu()
+          //                 : () => bottomSheetConfirm.modalBottomSheetMenu(),
+          //             image: item.icon,
+          //             title: item.title,
+          //             height: 60,
+          //             width: 60,
+          //             padding: 14,
+          //           ),
+          //         );
+          //       }),
           // ),
-          // const SizedBox(
-          //   height: 27,
-          // ),
-          // const Padding(
-          //   padding: EdgeInsets.only(left: 43.0, right: 43),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       IconButtonWidget(
-          //         image: 'assets/images/icon_cart.svg',
-          //         height: 60,
-          //         width: 60,
-          //         padding: 14,
-          //         title: "App 4",
-          //       ),
-          //       IconButtonWidget(
-          //         image: 'assets/images/icon_crown.svg',
-          //         height: 60,
-          //         width: 60,
-          //         padding: 14,
-          //         title: "App 5",
-          //       ),
-          //       IconButtonWidget(
-          //         image: 'assets/images/icon_more.svg',
-          //         height: 60,
-          //         width: 60,
-          //         padding: 14,
-          //         title: "More",
-          //       ),
-          //     ],
-          //   ),
-          // ),
+
+           Padding(
+            padding: const EdgeInsets.only(left: 43.0, right: 43),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButtonWidget(
+                  function: (){
+                    bottomSheetDialog.modalBottomSheetMenu();
+                  },
+                  image: 'assets/images/icon_game.svg',
+                  height: 60,
+                  width: 60,
+                  padding: 14,
+                  title: "App 1",
+                ),
+                 IconButtonWidget(
+                  function: () => bottomSheetConfirm.modalBottomSheetMenu(),
+                  image: 'assets/images/icon_bookmac.svg',
+                  height: 60,
+                  width: 60,
+                  padding: 14,
+                  title: "App 2",
+                ),
+                const IconButtonWidget(
+                  image: 'assets/images/icon_calendar.svg',
+                  height: 60,
+                  width: 60,
+                  padding: 14,
+                  title: "App 3",
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 27,
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 43.0, right: 43),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButtonWidget(
+                  image: 'assets/images/icon_cart.svg',
+                  height: 60,
+                  width: 60,
+                  padding: 14,
+                  title: "App 4",
+                ),
+                IconButtonWidget(
+                  image: 'assets/images/icon_crown.svg',
+                  height: 60,
+                  width: 60,
+                  padding: 14,
+                  title: "App 5",
+                ),
+                IconButtonWidget(
+                  image: 'assets/images/icon_more.svg',
+                  height: 60,
+                  width: 60,
+                  padding: 14,
+                  title: "More",
+                ),
+              ],
+            ),
+          ),
           const SizedBox(
             height: 54,
           ),
