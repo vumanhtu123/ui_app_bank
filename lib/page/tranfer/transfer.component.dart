@@ -21,37 +21,47 @@ class _TransferComponentState extends State<TransferComponent> {
       decoration: BoxDecoration(
           color: const Color(0xFFE3FFE9),
           borderRadius: BorderRadius.circular(6)),
-      child: Row(
-        children: [
-          const SizedBox(width: 16),
-          // SvgPicture.asset(Assets.assetsLogo),
-          Image.asset(
-            Assets.assetsLogo1,
-            width: 20,
-            height: 20,
-          ),
-          const SizedBox(width: 8),
-          const Text(
-            'Balance',
-            style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                color: Color(0xFF5B5B5C)),
-          ),
-          const SizedBox(width: 123),
-          Text(
-            '895.500,000',
-            style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 14,
-                color: Colors.grey[900]),
-          ),
-          const SizedBox(width: 4),
-          const Text(
-            'TZS',
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // SvgPicture.asset(Assets.assetsLogo),
+            Row(
+              children: [
+                Image.asset(
+                  Assets.assetsLogo1,
+                  width: 20,
+                  height: 20,
+                ),
+                const SizedBox(width: 8),
+                const Text(
+                  'Balance',
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF5B5B5C)),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  '895.500,000',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
+                      color: Colors.grey[900]),
+                ),
+                const SizedBox(width: 4),
+                const Text(
+                  'TZS',
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -89,7 +99,7 @@ class _BodyTransferState extends State<BodyTransfer> {
 
   @override
   Widget build(BuildContext context) {
-    BottomSheetConfirm bottomSheetConfirm = BottomSheetConfirm(context);
+    BottomSheetConfirm bottomSheetConfirm = BottomSheetConfirm(context, () {});
     bool? isChecked = true;
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),

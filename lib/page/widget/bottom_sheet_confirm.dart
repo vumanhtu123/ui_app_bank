@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_pin.dart';
 import 'package:flutter_svg/svg.dart';
 
 class BottomSheetConfirm {
+  final Function() onTap;
   final BuildContext context;
 
-  BottomSheetConfirm(this.context);
+  BottomSheetConfirm(this.context, this.onTap);
 
   void modalBottomSheetMenu() {
     showModalBottomSheet(
@@ -13,9 +13,8 @@ class BottomSheetConfirm {
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (BuildContext builder) {
-        double height = MediaQuery.of(context).size.height - 273;
         return Container(
-          height: height,
+          height: MediaQuery.of(context).size.height - 273,
           decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
@@ -23,7 +22,7 @@ class BottomSheetConfirm {
               topRight: Radius.circular(16.0),
             ),
           ),
-          child: ItemBottomSheetConfirm(height),
+          child: ItemBottomSheetConfirm(onTap: onTap),
         );
       },
     );
@@ -31,8 +30,10 @@ class BottomSheetConfirm {
 }
 
 class ItemBottomSheetConfirm extends StatelessWidget {
-  ItemBottomSheetConfirm(this.height, {super.key});
-  final double? height;
+  final Function() onTap;
+
+  ItemBottomSheetConfirm({super.key, required this.onTap});
+
   final List<ItemTextData> listData = [
     ItemTextData("Recipient Name", 'Jane Cooper', false, false),
     ItemTextData("Recipient Phone", '(+255) 555-0134', false, false),
@@ -44,7 +45,6 @@ class ItemBottomSheetConfirm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BottomSheetPin bottomSheetPin = BottomSheetPin();
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -88,17 +88,10 @@ class ItemBottomSheetConfirm extends StatelessWidget {
               );
             },
           ),
-          const SizedBox(
-            height: 16,
-          ),
           ButtonWidget(
             textButton: "Confirm",
-            openNextBottom: () {
-              Navigator.of(context).pop();
-              bottomSheetPin.modalBottomSheetPin(context , height);
-              // print("object");
-            } ,
-          )
+            openNextBottom: onTap,
+          ),
         ]));
   }
 }
@@ -184,7 +177,7 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: openNextBottom,
+      onTap: () => openNextBottom!(),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),

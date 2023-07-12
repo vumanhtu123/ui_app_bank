@@ -3,9 +3,8 @@ import 'package:flutter_superapp_tanzania/common/appbar.dart';
 import 'package:flutter_superapp_tanzania/common/mcolor.dart';
 import 'package:flutter_superapp_tanzania/page/tranfer/transfer.component.dart';
 import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_confirm.dart';
+import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_pin.dart';
 import 'package:flutter_superapp_tanzania/page/widget/normal.button.dart';
-
-import '../tranferSuccess/tranfer.success.page.dart';
 
 class Transfer extends StatefulWidget {
   const Transfer({super.key});
@@ -21,10 +20,10 @@ class _TransferState extends State<Transfer> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Expanded(
+          Expanded(
             child: SingleChildScrollView(
               child: Column(
-                children: [
+                children: const [
                   CustomAppbar(),
                   TransferComponent(),
                   SizedBox(height: 16),
@@ -39,20 +38,8 @@ class _TransferState extends State<Transfer> {
               onPress: () {
                 setState(() {
                   BottomSheetConfirm(context, () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const TransferSuccess()));
+                    BottomSheetPin().modalBottomSheetPin(context, 29.1);
                   }).modalBottomSheetMenu();
-                  // loadingDialog(context);
-                  Future.delayed(Duration(seconds: 4), () {
-                    // Code to be executed after the delay
-                    // closeLoading(context);
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => const TransferSuccess()));
-                  });
                 });
               },
               width: 343,
