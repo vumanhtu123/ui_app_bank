@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/common/mcolor.dart';
 import 'package:flutter_superapp_tanzania/common/mtext_styles.dart';
+import 'package:flutter_superapp_tanzania/page/widget/normal.button.dart';
 
 class CardBalanceComponent extends StatelessWidget {
   const CardBalanceComponent({super.key});
@@ -36,7 +37,7 @@ class CardBalanceComponent extends StatelessWidget {
             'Balance',
             style: MTextStyle.grayNormal,
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 15),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -54,9 +55,34 @@ class CardBalanceComponent extends StatelessWidget {
               )
             ],
           ),
+          const SizedBox(height: 25),
           Row(
             children: [
-
+              Expanded(
+                child: NormalButtonWidget(
+                  height: 48,
+                  borderRadius: 8,
+                  color: MColor.white,
+                  colorBg: MColor.green1,
+                  title: 'Send Money',
+                  fontSize: 14,
+                  svgAsset: 'assets/icons/ic_service.svg',
+                  fonWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: NormalButtonWidget(
+                  height: 48,
+                  borderRadius: 8,
+                  color: MColor.white,
+                  colorBg: MColor.green1,
+                  title: 'Withdraw',
+                  fontSize: 14,
+                  svgAsset: 'assets/icons/ic_withdraw.svg',
+                  fonWeight: FontWeight.w600,
+                ),
+              ),
             ],
           )
         ],

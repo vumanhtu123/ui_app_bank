@@ -261,7 +261,7 @@ class _TransferSuccessState extends State<TransferSuccess> {
                         borderRadius: 6,
                         width: 343,
                         height: 54,
-                        tittle: 'Home',
+                        title: 'Home',
                         fontSize: 14,
                         fonWeight: FontWeight.w600,
                         color: Colors.white,

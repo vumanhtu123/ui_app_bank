@@ -43,10 +43,11 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: IndexedStack(
+        index: _currentIndex,
         children: [
           const HomePage(),
-          const DiscoveryPage(),
           Container(),
+          const DiscoveryPage(),
           Container(),
           Container()
         ],

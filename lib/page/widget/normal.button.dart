@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/common/mcolor.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class NormalButtonWidget extends StatelessWidget {
   const NormalButtonWidget(
       {super.key,
-      required this.tittle,
+      required this.title,
+      this.svgAsset,
       this.width,
       this.color,
       this.fonWeight,
@@ -16,7 +18,8 @@ class NormalButtonWidget extends StatelessWidget {
       this.onPress});
 
   final VoidCallback? onPress;
-  final String tittle;
+  final String title;
+  final String? svgAsset;
   final double? iconPadding;
   final double? width;
   final double? fontSize;
@@ -41,12 +44,26 @@ class NormalButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius ?? 30),
           color: colorBg ?? MColor.gray1,
         ),
-        child: Center(
-          child: Text(
-            tittle,
-            style: TextStyle(
-                fontSize: fontSize, fontWeight: fonWeight, color: color),
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if(svgAsset != null)...[
+              SvgPicture.asset(
+                svgAsset ?? '',
+                width: 20,
+                height: 20,
+              ),
+              const SizedBox(width: 10)
+            ],
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: fontSize,
+                fontWeight: fonWeight,
+                color: color,
+              ),
+            ),
+          ],
         ),
       ),
     );
