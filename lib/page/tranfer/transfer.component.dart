@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/common/dropdown.field.dart';
 import 'package:flutter_superapp_tanzania/generated/assets.dart';
+import 'package:flutter_superapp_tanzania/page/widget/bottom_sheet_confirm.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:skeletons/skeletons.dart';
 
@@ -71,16 +72,24 @@ class _BodyTransferState extends State<BodyTransfer> {
   void initState() {
     amountController = TextEditingController();
     Future.delayed(const Duration(seconds: 4), () {
-      setState(() {
+      if (mounted) {
+        setState(() {
         _isLoading =
             false; // Khi hoàn thành tải hoặc xử lý, ẩn skeleton placeholder
       });
+      }
     });
     super.initState();
+  }
+  @override
+  void dispose() {
+    amountController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    BottomSheetConfirm bottomSheetConfirm = BottomSheetConfirm(context);
     bool? isChecked = true;
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -247,6 +256,13 @@ class _BodyTransferState extends State<BodyTransfer> {
                           fontWeight: FontWeight.w600,
                           color: Colors.black),
                       controller: amountController,
+                      onSubmitted: (value) {
+                        if(value.isEmpty){
+                          return;
+                        }else{
+                          bottomSheetConfirm.modalBottomSheetMenu();
+                        }
+                      },
                       decoration: const InputDecoration(
                         contentPadding: EdgeInsets.all(0),
                         hintText: ' Amount',

@@ -21,10 +21,10 @@ class _TransferState extends State<Transfer> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Expanded(
+          const Expanded(
             child: SingleChildScrollView(
               child: Column(
-                children: const [
+                children: [
                   CustomAppbar(),
                   TransferComponent(),
                   SizedBox(height: 16),
