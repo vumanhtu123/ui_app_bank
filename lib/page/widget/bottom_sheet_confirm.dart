@@ -88,6 +88,7 @@ class ItemBottomSheetConfirm extends StatelessWidget {
               );
             },
           ),
+          const SizedBox(height: 16),
           ButtonWidget(
             textButton: "Confirm",
             openNextBottom: onTap,
