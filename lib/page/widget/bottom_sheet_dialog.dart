@@ -56,7 +56,8 @@ class ItemBottomSheet extends StatelessWidget {
                 height: 32,
                 width: 32,
                 decoration: const BoxDecoration(
-                  shape: BoxShape.circle, color: Color(0xFFF3F3F3),
+                  shape: BoxShape.circle,
+                  color: Color(0xFFF3F3F3),
                 ),
                 child: InkWell(
                   onTap: () => Navigator.pop(context),

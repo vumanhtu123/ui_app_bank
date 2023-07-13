@@ -23,36 +23,35 @@ class IconButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-      Column(
-        children: [
-          InkWell(
-            onTap: function,
-            child: Container(
-              width: width ?? 32,
-              height: height ?? 32,
-              decoration:  BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(radius ?? 30)),
-                color: const Color(0xFFF3F3F3),
-                shape: BoxShape.rectangle,
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(padding ?? 14),
-                child: SvgPicture.asset(image!)
-              ),
+    return Column(
+      children: [
+        InkWell(
+          onTap: function,
+          child: Container(
+            width: width ?? 32,
+            height: height ?? 32,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(radius ?? 30)),
+              color: const Color(0xFFF3F3F3),
+              shape: BoxShape.rectangle,
             ),
+            child: Padding(
+                padding: EdgeInsets.all(padding ?? 14),
+                child: SvgPicture.asset(image!)),
           ),
-          const SizedBox(height: 12,),
-          Text(
-            title ?? "",
-            style: const TextStyle(
+        ),
+        const SizedBox(
+          height: 12,
+        ),
+        Text(
+          title ?? "",
+          textAlign: TextAlign.center,
+          style: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w400,
-              color: Color(0xFF141416)
-            ),
-          )
-        ],
-      );
-
+              color: Color(0xFF141416)),
+        )
+      ],
+    );
   }
 }

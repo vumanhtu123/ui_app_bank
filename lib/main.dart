@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_superapp_tanzania/page/discovery/discovery_page.dart';
 import 'package:flutter_superapp_tanzania/page/home/home_page.dart';
-import 'package:flutter_superapp_tanzania/page/tranfer/transfer.page.dart';
 import 'package:flutter_svg/svg.dart';
 
 void main() {
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Transfer(),
+      home: const MainPage(),
     );
   }
 }
@@ -34,6 +33,9 @@ class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
 
   void _updateIndex(int value) {
+    if(value != 0 && value != 2) {
+      return;
+    }
     setState(() {
       _currentIndex = value;
     });
@@ -44,10 +46,11 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: IndexedStack(
+        index: _currentIndex,
         children: [
           const HomePage(),
-          const DiscoveryPage(),
           Container(),
+          const DiscoveryPage(),
           Container(),
           Container()
         ],

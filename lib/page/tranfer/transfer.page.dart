@@ -46,7 +46,7 @@ class _TransferState extends State<Transfer> {
               borderRadius: 6,
               height: 54,
               colorBg: MColor.green1,
-              tittle: 'Continue',
+              title: 'Continue',
               fontSize: 14,
               fonWeight: FontWeight.w600,
               color: Colors.white,
